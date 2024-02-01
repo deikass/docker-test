@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   api:
+    network_mode: bridge
     build: ./api
     container_name: api_c
     ports:
@@ -9,6 +10,7 @@ services:
       - ./api:/app
       - /app/node_modules
   myblog:
+    network_mode: bridge
     build: ./myblog
     container_name: myblog_c
     ports:
